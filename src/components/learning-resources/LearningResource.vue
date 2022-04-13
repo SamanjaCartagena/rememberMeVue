@@ -4,7 +4,7 @@
         <base-card>
             <header>
                 <h3>{{title}}</h3>
-                <base-button mode="round">Delete</base-button>
+                <base-button mode="round" @click="deleteResource(id)">Delete</base-button>
             </header>
       
         <p>{{description}}</p>
@@ -18,7 +18,8 @@
 <script>
 import BaseCard from '../UI/BaseCard.vue'
 export default{
-    props:['title','description', 'link']
+    props:['id','title','description', 'link'],
+    inject:['deleteResource']
 , components:{
     BaseCard
 }

@@ -40,7 +40,8 @@ export default{
     provide(){
         return{
           resources:this.storedResources,
-          addResource:this.addResource
+          addResource:this.addResource,
+          deleteResource: this.removeResource
         };
     },
     computed:{
@@ -66,6 +67,10 @@ export default{
           this.selectedTab ='stored-resources';
 
 
+        },
+        removeResource(resId){
+            this.storedResources = this.storedResources.filter(res => res.id !== resId);
+            console.log(this.storedResources.length)
         }
     }
 }
