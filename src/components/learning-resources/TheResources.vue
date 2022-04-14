@@ -69,9 +69,13 @@ export default{
 
         },
         removeResource(resId){
-            this.storedResources = this.storedResources.filter(res => res.id !== resId);
-            console.log(this.storedResources.length)
+          const resIndex = this.storedResources.findIndex( res => res.id === resId);
+          this.storedResources.splice(resIndex,1);
         }
     }
+    
+
+    
 }
+
 </script>
